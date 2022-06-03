@@ -47,18 +47,18 @@ const LoginScreen = () => {
       <h3>Login</h3>
       <hr />
 
-      <div className="row container">
+      <div className="row container ">
         <form className="col s12" onSubmit={handleEmailLogin}>
           <div className="row">
             {/* Correo */}
-            <div className="input-field col s12">
-              <i className="material-icons prefix">email</i>
+            <div className="input-field col s12 ">
+              <i className="material-icons prefix ">email</i>
               <input
                 onChange={handleChange}
                 value={email}
                 name="email"
                 id="icon_prefix1"
-                className="materialize-textarea"
+                className="materialize-textarea "
                 type="email"
               />
               <label htmlFor="icon_prefix1">Email</label>

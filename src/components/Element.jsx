@@ -1,7 +1,11 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { eliminarRegistro } from "../actions/nomina";
 
 const Element = ({ data }) => {
-  const { fecha, pago } = data;
+  const { fecha, pago, id } = data;
+
+  const dispatch = useDispatch();
 
   let fechaFormateada;
 
@@ -13,12 +17,19 @@ const Element = ({ data }) => {
 
   // `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()} - ${date.getHours()}:${date.getUTCMinutes()}`;
 
+  const handleDelete = () => {
+    dispatch(eliminarRegistro(id));
+  };
+
   return (
     <>
       <td>{fechaFormateada}</td>
       <td>{pago}</td>
       <td>
-        <button className="btn waves-effect waves-light red darken-4">
+        <button
+          className="btn waves-effect waves-light red darken-4"
+          onClick={handleDelete}
+        >
           Eliminar
         </button>
       </td>

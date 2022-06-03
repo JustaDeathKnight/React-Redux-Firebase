@@ -1,28 +1,37 @@
-import React from 'react'
-import { useDispatch } from 'react-redux';
-import { logout } from '../actions/auth';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { logout } from "../actions/auth";
+import { limpiarRegistros } from "../actions/nomina";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch();
-
-    const handleLogout = () => {
-        dispatch(logout());
-    }
+  const handleLogout = () => {
+    dispatch(limpiarRegistros());
+    dispatch(logout());
+  };
 
   return (
-    <nav className='cyan darken-4'>
-    <div className="nav-wrapper">
-      <a href="/" className="brand-logo"> &nbsp; Requiem</a>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
-        <li><a href="/" className='btn deep-orange accent-4 waves-effect waves-light' onClick={handleLogout}>logout</a></li>
-        
-      </ul>
-    </div>
-  </nav>
+    <nav className="cyan darken-4">
+      <div className="nav-wrapper">
+        <a href="/" className="brand-logo">
+          {" "}
+          &nbsp; Requiem
+        </a>
+        <ul id="nav-mobile" className="right hide-on-med-and-down">
+          <li>
+            <a
+              href="/"
+              className="btn deep-orange accent-4 waves-effect waves-light"
+              onClick={handleLogout}
+            >
+              logout
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  );
+};
 
-
-  )
-}
-
-export default Navbar
+export default Navbar;

@@ -22,7 +22,13 @@ export const crearRegistro = (pago) => {
     };
 
     dispatch(crear(newData));
+  };
+};
 
+export const crear = (data) => {
+  return {
+    type: types.nominaAdd,
+    payload: data,
   };
 };
 
@@ -33,9 +39,25 @@ export const leerRegistros = (data) => {
   };
 };
 
-export const crear = (data) => {
-  return {
-    type: types.nominaAdd,
-    payload: data,
+export const eliminarRegistro = (id) => {
+  return async (dispatch, getState) => {
+    const { uid } = getState().auth;
+
+    await db.doc(`${uid}/nominas/nomina/${id}`).delete();
+
+    dispatch(eliminar(id));
   };
 };
+
+export const eliminar = (id) => {
+  return {
+    type: types.nominaDelete,
+    payload: id,
+  };
+};
+
+export const limpiarRegistros = () => {
+  return {
+    type: types.nominaClean,
+  };
+}
