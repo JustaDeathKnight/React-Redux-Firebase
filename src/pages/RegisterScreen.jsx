@@ -47,7 +47,7 @@ const RegisterScreen = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container animate__animated animate__fadeIn">
       <h3>Register</h3>
       <hr />
 

@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Nomina",
+  "name": "Claculadora de Nomina",
   "icons": [
     {
       "src": "favicon.ico",

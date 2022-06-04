@@ -22,6 +22,8 @@ const FormAdd = () => {
   const handleSave = () => {
     const cantidadFinal = precioHora * horas;
     dispatch(crearRegistro(cantidadFinal));
+
+    setCantidadPago({ precioHora: "", horas: "" });
   };
 
   return (
@@ -32,19 +34,21 @@ const FormAdd = () => {
       {viewForm && (
         <div className="container">
           <label className="form-add">
-            <h5>Agregar Nuevo Registro</h5>
+            <h5 className="center">Agregar Nuevo Registro</h5>
             <hr />
             <input
-              type="text"
-              placeholder="Ingrese monto"
+              type="number"
+              step="0.01"
+              placeholder="Ingrese pago por horas"
               value={precioHora || ""}
               onChange={handleChange}
               name="precioHora"
             />
 
             <input
-              type="text"
-              placeholder="Ingrese horas"
+              type="number"
+              step="0.01"
+              placeholder="Ingrese horas trabajadas"
               value={horas || ""}
               onChange={handleChange}
               name="horas"

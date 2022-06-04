@@ -24,13 +24,13 @@ const Element = ({ data }) => {
   return (
     <>
       <td>{fechaFormateada}</td>
-      <td>{pago}</td>
+      <td>$ {pago}</td>
       <td>
         <button
           className="btn waves-effect waves-light red darken-4"
           onClick={handleDelete}
         >
-          Eliminar
+          <i className="material-icons ">delete_forever</i>
         </button>
       </td>
     </>
