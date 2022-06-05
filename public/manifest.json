@@ -1,6 +1,6 @@
 {
-  "short_name": "Nomina",
-  "name": "Calculadora de Nomina",
+  "short_name": "Nómina de empleados",
+  "name": "Calculadora de Nómina - Sistema de Nómina",
   "icons": [
     {
       "src": "windows11/SmallTile.scale-100.png",
